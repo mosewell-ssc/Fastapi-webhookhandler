@@ -1,0 +1,7 @@
+# Build and run docker container
+
+az acr update -n scscdsaiteamsbotcr --admin-enabled true                     #Set admin
+az acr build --image sample/hello-world:v1 --registry scscdsaiteamsbotcr --file Dockerfile . 
+az acr run --registry scscdsaiteamsbotcr --cmd '$Registry/sample/hello-world:v1' /dev/null
+
+ssh -i C:\Users\SewellM1\Downloads\scsc-dsai-webhookrx-vm_key.pem azureuser@4.206.70.139
